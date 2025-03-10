@@ -9,3 +9,10 @@ const {getDefaultConfig, mergeConfig} = require('@react-native/metro-config');
 const config = {};
 
 module.exports = mergeConfig(getDefaultConfig(__dirname), config);
+
+// const path = require('path');
+
+// module.exports = {
+//   projectRoot: path.resolve(__dirname),
+//   watchFolders: [path.resolve(__dirname, 'src')],
+// };
