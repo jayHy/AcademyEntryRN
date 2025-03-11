@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Provider as PaperProvider } from 'react-native-paper';
 
+import MainStudentViewScreen from './src/pages/MainStudentViewScreen';
 import ListProfileScreen from './src/pages/ListProfileScreen';  // 회원 정보 리스트
 import UserProfileScreen from './src/pages/UserProfileScreen';  // 회원 정보 보기 화면
 import EditProfileScreen from './src/pages/EditProfileScreen';  // 회원 정보 편집 화면
@@ -13,7 +14,12 @@ const App = () => {
   return (
     <PaperProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="ListProfile">
+        <Stack.Navigator initialRouteName="MainStudent">
+        <Stack.Screen
+            name="MainStudent"
+            component={MainStudentViewScreen}
+            options={{}}
+          />
          <Stack.Screen
             name="ListProfile"
             component={ListProfileScreen}
