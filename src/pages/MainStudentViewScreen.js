@@ -32,11 +32,11 @@ const renderMemberItem = ({ item }) => (
   </Card>
 );
 
-const StudentViewScreen = () => {
+const StudentViewScreen = ({navigation}) => {
   return (
     <SafeContainer>
       <VContent>
-          <View style={styles.section}>
+          <Card style={styles.section}>
             <ScrollView contentContainerStyle={styles.scrollView}>
               <View style={styles.grid}>
                 {members.map((item, index) => (
@@ -56,7 +56,7 @@ const StudentViewScreen = () => {
               ))}
               </View>
             </ScrollView>
-          </View>
+          </Card>
           <View style={styles.section}>
             <ScrollView contentContainerStyle={styles.scrollView}>
               <View style={styles.grid}>
@@ -79,16 +79,17 @@ const StudentViewScreen = () => {
 const styles = StyleSheet.create({
   scrollView: {
     flexGrow: 1,
-    justifyContent: 'center',
+    // justifyContent: 'center',
+  
     alignItems: 'center',
   },
   grid: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'center',
+    justifyContent: 'space-between',
   },
   card: {
-    width: width / 4 - 20,
+    width: width / 4,
     margin: 10,
   },
   section: {

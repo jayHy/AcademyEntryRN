@@ -14,11 +14,12 @@ const App = () => {
   return (
     <PaperProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="MainStudent">
+        <Stack.Navigator 
+          initialRouteName="MainStudent">
         <Stack.Screen
             name="MainStudent"
             component={MainStudentViewScreen}
-            options={{}}
+            options={{headerShown: false}}
           />
          <Stack.Screen
             name="ListProfile"
