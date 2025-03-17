@@ -3,6 +3,8 @@ import { ScrollView, View, StyleSheet, Dimensions } from 'react-native';
 import { Card, Title, Paragraph, Text} from 'react-native-paper';
 import { SafeContainer, VContent } from '../components/Base';
 
+import { EntryDatabase } from '../util/EntryDatabase';
+
 const { width, height } = Dimensions.get('window');
 
 const data = Array.from({ length: 20 }, (_, i) => `Item ${i + 1}`);
@@ -33,6 +35,9 @@ const renderMemberItem = ({ item }) => (
 );
 
 const StudentViewScreen = ({navigation}) => {
+
+  fetchDataAndLog()
+
   return (
     <SafeContainer>
       <VContent>
@@ -74,6 +79,16 @@ const StudentViewScreen = ({navigation}) => {
     </SafeContainer>
    
   );
+};
+
+// 예제 사용
+const fetchDataAndLog = async () => {
+  try {
+    const data = await EntryDatabase.getStudentList();
+    console.log(data);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 const styles = StyleSheet.create({

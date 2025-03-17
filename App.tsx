@@ -1,4 +1,6 @@
 import React from 'react';
+import SQLite from 'react-native-sqlite-storage';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Provider as PaperProvider } from 'react-native-paper';
@@ -9,6 +11,8 @@ import UserProfileScreen from './src/pages/UserProfileScreen';  // 회원 정보
 import EditProfileScreen from './src/pages/EditProfileScreen';  // 회원 정보 편집 화면
 
 const Stack = createStackNavigator();
+
+SQLite.enablePromise(true);
 
 const App = () => {
   return (
